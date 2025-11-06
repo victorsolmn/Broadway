@@ -52,7 +52,7 @@ export function AnimatedBackground() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [touchPos, setTouchPos] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | undefined>(undefined);
 
   // Initialize floating icons
   useEffect(() => {
