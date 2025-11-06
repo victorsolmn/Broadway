@@ -1,7 +1,5 @@
 "use client";
 
-export const runtime = 'edge';
-
 import { useAuth } from "@/contexts/AuthContext";
 import { AuthForm } from "@/components/auth/AuthForm";
 import { useRouter } from "next/navigation";
