@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
+import { AnimatedBackground } from "./AnimatedBackground";
 import Link from "next/link";
 
 interface AuthFormProps {
@@ -57,23 +58,8 @@ export function AuthForm({ type, onSubmit, onSuccess }: AuthFormProps) {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Animated background gradient */}
-      <motion.div
-        className="absolute inset-0 opacity-30"
-        animate={{
-          background: [
-            "radial-gradient(circle at 20% 50%, rgba(234, 179, 8, 0.3) 0%, transparent 50%)",
-            "radial-gradient(circle at 80% 50%, rgba(234, 179, 8, 0.3) 0%, transparent 50%)",
-            "radial-gradient(circle at 50% 80%, rgba(234, 179, 8, 0.3) 0%, transparent 50%)",
-            "radial-gradient(circle at 20% 50%, rgba(234, 179, 8, 0.3) 0%, transparent 50%)",
-          ],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-      />
+      {/* Interactive Animated Background */}
+      <AnimatedBackground />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
