@@ -227,7 +227,7 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
             {curatedProducts.slice(0, 4).map((product, index) => (
               <ProductCard key={product.id} product={product} index={index} />
             ))}
@@ -340,7 +340,7 @@ export default function HomePage() {
               </h3>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {trendingProducts.map((product, index) => (
                 <ProductCard key={product.id} product={product} index={index} />
               ))}
@@ -364,7 +364,7 @@ export default function HomePage() {
               </h3>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
               {bestValueProducts.slice(0, 4).map((product, index) => (
                 <ProductCard key={product.id} product={product} index={index} />
               ))}
@@ -376,7 +376,7 @@ export default function HomePage() {
       {/* All Products / Filtered Category */}
       {selectedCategory && (
         <section className="container mx-auto px-4 pb-20">
-          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
             {displayedProducts.map((product, index) => (
               <ProductCard key={product.id} product={product} index={index} />
             ))}
