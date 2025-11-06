@@ -83,16 +83,16 @@ export default function HomePage() {
   // Get icon for each category
   const getCategoryIcon = (category: string) => {
     const icons: Record<string, React.ReactNode> = {
-      Fashion: <Shirt className="h-7 w-7 md:h-9 md:w-9" />,
-      "Smart Wearables": <Watch className="h-7 w-7 md:h-9 md:w-9" />,
-      Beauty: <Sparkle className="h-7 w-7 md:h-9 md:w-9" />,
-      "Health & Wellness": <Heart className="h-7 w-7 md:h-9 md:w-9" />,
-      "Home & Living": <Home className="h-7 w-7 md:h-9 md:w-9" />,
-      Electronics: <Laptop className="h-7 w-7 md:h-9 md:w-9" />,
-      Fitness: <Dumbbell className="h-7 w-7 md:h-9 md:w-9" />,
-      "Food & Snacks": <Apple className="h-7 w-7 md:h-9 md:w-9" />,
+      Fashion: <Shirt className="h-5 w-5 md:h-9 md:w-9" />,
+      "Smart Wearables": <Watch className="h-5 w-5 md:h-9 md:w-9" />,
+      Beauty: <Sparkle className="h-5 w-5 md:h-9 md:w-9" />,
+      "Health & Wellness": <Heart className="h-5 w-5 md:h-9 md:w-9" />,
+      "Home & Living": <Home className="h-5 w-5 md:h-9 md:w-9" />,
+      Electronics: <Laptop className="h-5 w-5 md:h-9 md:w-9" />,
+      Fitness: <Dumbbell className="h-5 w-5 md:h-9 md:w-9" />,
+      "Food & Snacks": <Apple className="h-5 w-5 md:h-9 md:w-9" />,
     };
-    return icons[category] || <ShoppingBag className="h-7 w-7 md:h-9 md:w-9" />;
+    return icons[category] || <ShoppingBag className="h-5 w-5 md:h-9 md:w-9" />;
   };
 
   return (
@@ -227,7 +227,7 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
             {curatedProducts.slice(0, 4).map((product, index) => (
               <ProductCard key={product.id} product={product} index={index} />
             ))}
@@ -246,7 +246,7 @@ export default function HomePage() {
             Shop by Category
           </h3>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-4 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-3 md:gap-4 mb-8">
             {PRODUCT_CATEGORIES.map((category, index) => {
               const categoryProducts = getProductsByCategory(category);
               const isSelected = selectedCategory === category;
@@ -261,7 +261,7 @@ export default function HomePage() {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Card
-                    className={`glass cursor-pointer p-4 md:p-5 text-center rounded-2xl transition-all ${
+                    className={`glass cursor-pointer p-3 md:p-5 text-center rounded-2xl transition-all ${
                       isSelected
                         ? "border-primary bg-primary/10 shadow-elegant"
                         : "hover:border-primary/50"
@@ -272,9 +272,9 @@ export default function HomePage() {
                       )
                     }
                   >
-                    <div className="mb-3">
+                    <div className="mb-2 md:mb-3">
                       <div
-                        className={`w-14 h-14 md:w-16 md:h-16 mx-auto rounded-2xl flex items-center justify-center transition-all ${
+                        className={`w-10 h-10 md:w-16 md:h-16 mx-auto rounded-xl md:rounded-2xl flex items-center justify-center transition-all ${
                           isSelected
                             ? "bg-gradient-to-br from-primary/30 to-primary/10 shadow-lg"
                             : "bg-muted hover:bg-primary/5"
@@ -289,14 +289,14 @@ export default function HomePage() {
                         </div>
                       </div>
                     </div>
-                    <p className="text-xs md:text-sm font-semibold mb-1.5 line-clamp-2">
+                    <p className="text-xs md:text-sm font-semibold mb-1 md:mb-1.5 line-clamp-2">
                       {category}
                     </p>
                     <Badge
                       variant={isSelected ? "default" : "secondary"}
-                      className="text-xs"
+                      className="text-[10px] md:text-xs px-1.5 py-0.5 md:px-2 md:py-1"
                     >
-                      {categoryProducts.length} items
+                      {categoryProducts.length}
                     </Badge>
                   </Card>
                 </motion.div>
@@ -340,7 +340,7 @@ export default function HomePage() {
               </h3>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
               {trendingProducts.map((product, index) => (
                 <ProductCard key={product.id} product={product} index={index} />
               ))}
@@ -364,7 +364,7 @@ export default function HomePage() {
               </h3>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
               {bestValueProducts.slice(0, 4).map((product, index) => (
                 <ProductCard key={product.id} product={product} index={index} />
               ))}
@@ -376,7 +376,7 @@ export default function HomePage() {
       {/* All Products / Filtered Category */}
       {selectedCategory && (
         <section className="container mx-auto px-4 pb-20">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
             {displayedProducts.map((product, index) => (
               <ProductCard key={product.id} product={product} index={index} />
             ))}
